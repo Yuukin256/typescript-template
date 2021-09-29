@@ -7,9 +7,9 @@
     "dev": "ts-node",
     "start": "node .",
     "test": "jest",
-    "format": "prettier -w src/*{ts,json}",
-    "lint": "prettier -c && eslint",
-    "lint:fix": "eslint --fix"
+    "format": "prettier -w .",
+    "lint": "prettier -c . && eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
