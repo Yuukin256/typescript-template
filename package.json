@@ -8,7 +8,7 @@
     "start": "node .",
     "test": "jest",
     "format": "prettier -w .",
-    "lint": "prettier -c . && eslint .",
+    "lint": "prettier -c . && eslint . && tsc --noEmit",
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
