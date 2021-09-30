@@ -9,6 +9,9 @@ extends:
   - 'plugin:import/typescript'
   - 'prettier'
 
+plugins:
+  - 'unused-imports'
+
 rules:
   import/order:
     - 2
