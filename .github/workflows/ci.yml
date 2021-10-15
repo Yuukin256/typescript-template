@@ -1,8 +1,29 @@
-name: 'test'
+name: 'ci'
 
 on: pull_request
 
 jobs:
+  lint:
+    name: Lint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '^16.6.0'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run lint
+        run: yarn lint
+
   test:
     name: Test
 
@@ -12,14 +33,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@master
 
-      - name: Read node version from package.json
-        uses: culshaw/read-package-node-version-actions@v1
-        id: package-node-version
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ steps.package-version.outputs.version }}
+          node-version: '^16.6.0'
           cache: 'yarn'
 
       - name: Install dependencies
