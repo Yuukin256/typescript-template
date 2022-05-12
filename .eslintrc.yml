@@ -20,10 +20,21 @@ parserOptions:
 
 rules:
   import/order:
-    - 2
-    - alphabetize:
+    - error
+    - groups:
+        - builtin
+        - external
+        - internal
+        - parent
+        - sibling
+        - index
+        - object
+        - type
+      alphabetize:
         order: asc
+      newlines-between: always
   '@typescript-eslint/consistent-type-imports': error
+  unused-imports/no-unused-imports: warn
 
 settings:
   import/resolver: typescript
