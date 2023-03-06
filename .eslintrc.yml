@@ -34,3 +34,9 @@ rules:
 
 settings:
   import/resolver: typescript
+
+overrides:
+  - files:
+      - '*.js'
+    parserOptions:
+      project: null
